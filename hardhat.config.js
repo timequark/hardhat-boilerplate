@@ -7,10 +7,10 @@ require("./tasks/faucet");
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: "0.8.17",
+  solidity: "0.8.18",
   networks: {
     hardhat: {
-      chainId: 1337 // We set 1337 to make interacting with MetaMask simpler
+      chainId: 31337 // We set 1337 to make interacting with MetaMask simpler
     }
   }
 };

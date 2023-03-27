@@ -35,6 +35,7 @@ contract Token {
         // account that is deploying the contract.
         balances[msg.sender] = totalSupply;
         owner = msg.sender;
+        console.log('Hello Contract-Token. Owner address: %s', owner);
     }
 
     /**

@@ -209,6 +209,8 @@ export class Dapp extends React.Component {
   _initialize(userAddress) {
     // This method initializes the dapp
 
+    console.log(`userAddress: ${ userAddress }`)
+
     // We first store the user's address in the component's state
     this.setState({
       selectedAddress: userAddress,
@@ -230,11 +232,14 @@ export class Dapp extends React.Component {
 
     // Then, we initialize the contract using that provider and the token's
     // artifact. You can do this same thing with your contracts.
+    this._signer = this._provider.getSigner(0)
     this._token = new ethers.Contract(
       contractAddress.Token,
       TokenArtifact.abi,
-      this._provider.getSigner(0)
+      this._signer
     );
+    
+    console.log(`signer address: ${ await this._signer.getAddress() }`)
   }
 
   // The next two methods are needed to start and stop polling data. While
